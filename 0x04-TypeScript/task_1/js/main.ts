@@ -35,16 +35,16 @@ const director1: Director = {
 
 console.log(director1);
 
-// Function interface
-interface printTeacher {
+// Interface for the function
+interface PrintTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Function implementation
-const printTeacher: printTeacher = (firstName, lastName) => {
-  return `${firstName.charAt(0)}. ${lastName}`;
-};
+// Explicit function declaration
+function printTeacher(firstName: string, lastName: string): string {
+  return firstName.charAt(0) + '. ' + lastName;
+}
 
 // Example usage
-console.log(printTeacher('John', 'Doe')); // Output: J. Doe
-console.log(printTeacher('Alice', 'Johnson')); // Output: A. Johnson
+console.log(printTeacher('John', 'Doe')); // J. Doe
+console.log(printTeacher('Alice', 'Johnson')); // A. Johnson
