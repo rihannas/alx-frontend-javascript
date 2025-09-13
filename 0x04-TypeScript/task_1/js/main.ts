@@ -37,14 +37,20 @@ console.log(director1);
 
 // Interface for the function
 interface PrintTeacherFunction {
-  (firstName: string, lastName: string): string;
+  (teacher: { firstName: string; lastName: string }): string;
 }
 
-// Explicit function declaration
-function printTeacher(firstName: string, lastName: string): string {
-  return firstName.charAt(0) + '. ' + lastName;
+// Function declaration using destructuring
+function printTeacher({
+  firstName,
+  lastName,
+}: {
+  firstName: string;
+  lastName: string;
+}): string {
+  return `${firstName.charAt(0)}. ${lastName}`;
 }
 
 // Example usage
-console.log(printTeacher('John', 'Doe')); // J. Doe
-console.log(printTeacher('Alice', 'Johnson')); // A. Johnson
+console.log(printTeacher({ firstName: 'John', lastName: 'Doe' })); // J. Doe
+console.log(printTeacher({ firstName: 'Alice', lastName: 'Johnson' })); // A. Johnson
